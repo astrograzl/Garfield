@@ -19,14 +19,11 @@
   <property name="windowTitle">
    <string>Garfield</string>
   </property>
-  <property name="autoFillBackground">
-   <bool>true</bool>
-  </property>
   <widget class="QWebView" name="webView">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>80</y>
+     <y>50</y>
      <width>910</width>
      <height>280</height>
     </rect>
@@ -62,9 +59,6 @@
     </item>
     <item>
      <widget class="QDateEdit" name="dateEdit">
-      <property name="autoFillBackground">
-       <bool>true</bool>
-      </property>
       <property name="minimumDate">
        <date>
         <year>1778</year>
@@ -75,12 +69,8 @@
       <property name="displayFormat">
        <string>yyyy-MM-dd</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QToolButton" name="calcButton">
-      <property name="text">
-       <string>...</string>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -91,35 +81,6 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QProgressBar" name="progressBar">
-      <property name="value">
-       <number>0</number>
-      </property>
-      <property name="textVisible">
-       <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="showButton">
-      <property name="text">
-       <string>Show</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>50</y>
-     <width>891</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
@@ -144,6 +105,48 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QPushButton" name="showButton">
+      <property name="text">
+       <string>Show</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>330</y>
+     <width>891</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Image URL</string>
+      </property>
+      <property name="buddy">
+       <cstring>lineEdit</cstring>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit"/>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>
@@ -159,8 +162,6 @@
   <tabstop>dateEdit</tabstop>
   <tabstop>todayButton</tabstop>
   <tabstop>showButton</tabstop>
-  <tabstop>horizontalSlider</tabstop>
-  <tabstop>checkBox</tabstop>
   <tabstop>webView</tabstop>
  </tabstops>
  <resources/>
@@ -176,8 +177,8 @@
      <y>123</y>
     </hint>
     <hint type="destinationlabel">
-     <x>455</x>
-     <y>21</y>
+     <x>724</x>
+     <y>338</y>
     </hint>
    </hints>
   </connection>

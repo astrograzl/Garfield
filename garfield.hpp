@@ -2,6 +2,7 @@
 #define GARFIELD_HPP
 
 #include <QWidget>
+#include <QCalendarWidget>
 
 namespace Ui {
 class Garfield;
@@ -22,7 +23,9 @@ private slots:
 
     void on_horizontalSlider_valueChanged(int value);
 
-    void on_calcButton_clicked();
+    void on_horizontalSlider_sliderReleased();
+
+    void on_dateEdit_dateChanged(const QDate &date);
 
 private:
     Ui::Garfield *ui;

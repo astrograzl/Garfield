@@ -17,5 +17,4 @@ SOURCES += main.cpp\
 
 HEADERS  += garfield.hpp
 
-FORMS    += garfield.ui \
-    dialog.ui
+FORMS    += garfield.ui
