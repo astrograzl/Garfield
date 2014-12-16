@@ -6,7 +6,7 @@ Garfield je jednoduchý prohlížeč stejnojmenného komixu napsaný za pomoci Q
 
 ## Momentka
 
-![Garfield](Grafield.png)
+![Garfield](Garfield.png)
 
 ## Copyleft
 
