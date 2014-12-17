@@ -27,6 +27,8 @@ private slots:
 
     void on_dateEdit_dateChanged(const QDate &date);
 
+    void on_dateEdit_editingFinished();
+
 private:
     Ui::Garfield *ui;
 };

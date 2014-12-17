@@ -1,4 +1,5 @@
 #include <QWebView>
+#include <QThread>
 #include "garfield.hpp"
 #include "ui_garfield.h"
 
@@ -18,7 +19,6 @@ Garfield::Garfield(QWidget *parent) :
     ui->dateEdit->calendarWidget()->setMaximumDate(MAXDATE);
 
     on_todayButton_clicked();
-    on_showButton_clicked();
 }
 
 Garfield::~Garfield()
@@ -40,16 +40,17 @@ void Garfield::on_showButton_clicked()
 void Garfield::on_todayButton_clicked()
 {
     ui->dateEdit->setDate(MAXDATE);
+    on_showButton_clicked();
+}
+
+void Garfield::on_horizontalSlider_sliderReleased()
+{
+    on_showButton_clicked();
 }
 
 void Garfield::on_horizontalSlider_valueChanged(int value)
 {
     ui->dateEdit->setDate(QDate::fromJulianDay(value));
-}
-
-void Garfield::on_horizontalSlider_sliderReleased()
-{
-    //if (ui->checkBox->isChecked()) on_showButton_clicked();
 }
 
 void Garfield::on_dateEdit_dateChanged(const QDate &date)
@@ -63,5 +64,9 @@ void Garfield::on_dateEdit_dateChanged(const QDate &date)
     } else {
         ui->horizontalSlider->setValue(date.toJulianDay());
     }
-    if (ui->checkBox->isChecked()) on_showButton_clicked();
+}
+
+void Garfield::on_dateEdit_editingFinished()
+{
+    on_showButton_clicked();
 }

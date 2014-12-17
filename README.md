@@ -1,6 +1,6 @@
 # Garfield
 
-Garfield je tlustá lenivá kočka.
+*Garfield je tlustý a lenivý zrzavý kocour, který je závislý na kávě, miluje lasagne a nesnáší pondělky*
 
 Garfield je jednoduchý prohlížeč stejnojmenného komixu napsaný za pomoci Qt frameworku. Jen tak pro zábavu. Během jedné noci, kdy jsem nemohl spát.
 
