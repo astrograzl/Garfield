@@ -1,7 +1,6 @@
-#include <QWebView>
-#include <QThread>
 #include "garfield.hpp"
 #include "ui_garfield.h"
+#include <QWebView>
 
 #define MINDATE QDate(1978, 6, 19)
 #define MAXDATE QDate::currentDate()
