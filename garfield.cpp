@@ -69,3 +69,21 @@ void Garfield::on_dateEdit_editingFinished()
 {
     on_showButton_clicked();
 }
+
+void Garfield::on_prevButton_clicked()
+{
+    QDate curdate = ui->dateEdit->date();
+    if (curdate > MINDATE) {
+        ui->dateEdit->setDate(curdate.addDays(-1));
+        on_showButton_clicked();
+    }
+}
+
+void Garfield::on_nextButton_clicked()
+{
+    QDate curdate = ui->dateEdit->date();
+    if (curdate < MAXDATE) {
+        ui->dateEdit->setDate(curdate.addDays(1));
+        on_showButton_clicked();
+    }
+}

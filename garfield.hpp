@@ -64,6 +64,16 @@ private slots:
      */
     void on_dateEdit_editingFinished();
 
+    /**
+     * @brief on_prevButton_clicked
+     */
+    void on_prevButton_clicked();
+
+    /**
+     * @brief on_nextButton_clicked
+     */
+    void on_nextButton_clicked();
+
 private:
     Ui::Garfield *ui; ///< user interface
 };
