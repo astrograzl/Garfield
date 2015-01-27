@@ -25,6 +25,14 @@ Garfield::~Garfield()
     delete ui;
 }
 
+void Garfield::keyPressEvent(QKeyEvent *e)
+{
+   if (e->key() == Qt::Key_Left)
+       on_prevButton_clicked();
+   else if (e->key() == Qt::Key_Right)
+       on_nextButton_clicked();
+}
+
 void Garfield::on_showButton_clicked()
 {
     QDateTime date = ui->dateEdit->dateTime();

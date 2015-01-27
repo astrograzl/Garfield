@@ -7,6 +7,7 @@
 
 #include <QWidget>
 #include <QCalendarWidget>
+#include <QKeyEvent>
 
 namespace Ui {
 class Garfield;
@@ -30,6 +31,11 @@ public:
      * @brief destructor
      */
     ~Garfield();
+
+    /**
+     * @brief keyPressEvent
+     */
+    void keyPressEvent(QKeyEvent*);
 
 private slots:
     /**
