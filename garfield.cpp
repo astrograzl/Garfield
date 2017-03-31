@@ -1,6 +1,6 @@
-#include "garfield.hpp"
-#include "ui_garfield.h"
 #include <QWebView>
+#include "ui_garfield.h"
+#include "garfield.hpp"
 
 #define MINDATE QDate(1978, 6, 19)
 #define MAXDATE QDate::currentDate()
@@ -27,18 +27,21 @@ Garfield::~Garfield()
 
 void Garfield::keyPressEvent(QKeyEvent *e)
 {
-   if (e->key() == Qt::Key_Left)
-       on_prevButton_clicked();
-   else if (e->key() == Qt::Key_Right)
-       on_nextButton_clicked();
+    if (e->key() == Qt::Key_Space)
+        on_randomButton_clicked();
+    else if (e->key() == Qt::Key_Left)
+        on_prevButton_clicked();
+    else if (e->key() == Qt::Key_Right)
+        on_nextButton_clicked();
 }
 
 void Garfield::on_showButton_clicked()
 {
     QDateTime date = ui->dateEdit->dateTime();
-    QString url = "https://garfield.com/uploads/strips/";
+    QString url = "https://d1ejxu6vysztl5.cloudfront.net/comics/garfield/";
+            url += QString(date.toString("yyyy")) + "/";
             url += QString(date.toString("yyyy-MM-dd"));
-            url += ".jpg";
+            url += ".gif";
     ui->lineEdit->setText(url);
     ui->webView->load(QUrl(url));
     ui->webView->show();
@@ -94,4 +97,12 @@ void Garfield::on_nextButton_clicked()
         ui->dateEdit->setDate(curdate.addDays(1));
         on_showButton_clicked();
     }
+}
+
+void Garfield::on_randomButton_clicked()
+{
+    int range = MAXDATE.toJulianDay() - MINDATE.toJulianDay() + 1;
+    int random = MINDATE.toJulianDay() + qrand() % range;
+    ui->dateEdit->setDate(QDate::fromJulianDay(random));
+    on_showButton_clicked();
 }

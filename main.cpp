@@ -1,5 +1,5 @@
-#include "garfield.hpp"
 #include <QApplication>
+#include "garfield.hpp"
 
 int main(int argc, char *argv[])
 {
